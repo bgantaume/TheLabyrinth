@@ -1,5 +1,6 @@
 class Grid
   def initialize(r, c)
+    @r = r
     @grid = Array.new(r)
     @feed_row = 0
   end
@@ -13,6 +14,6 @@ class Grid
     row.each_char do |c|
       @grid[@feed_row] << c
     end
-    @feed_row = @feed_row + 1
+    @feed_row = (@feed_row == (@r - 1)) ? 0 : @feed_row + 1
   end
 end
